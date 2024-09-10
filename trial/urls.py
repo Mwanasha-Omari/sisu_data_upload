@@ -20,7 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('csvupload/', include('csvupload.urls')),  # This should include all URLs defined in csvupload/urls.py
+    path('csvupload/', include('csvupload.urls')),  
 ]
 
 

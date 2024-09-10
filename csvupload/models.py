@@ -1,8 +1,10 @@
 from django.db import models
 
-class JsonData(models.Model):
-    data = models.JSONField()
-    file = models.FileField(upload_to='uploads/')
-    file_name = models.CharField(max_length=255)
-    file_size = models.PositiveIntegerField()
-    uploaded_at = models.DateTimeField(auto_now_add=True)
+class CsvUpload(models.Model):
+    name = models.CharField(max_length=25)
+    tsc_number = models.PositiveIntegerField(null=True, blank=True)  
+    region = models.CharField(max_length=20)
+    email = models.EmailField(max_length=254)  
+
+    def __str__(self):
+        return self.name
